@@ -9,7 +9,15 @@ public class MainVerticle extends AbstractVerticle {
 
     @Override
     public void start(Future<Void> startFuture) {
-        startFuture.complete(); 
+        startFuture.complete();
+
+      vertx.executeBlocking(future -> {
+ // Make our JNDI calls here!
+// future.complete(result);
+      }, result -> {
+// Handle the results of the blocking operation once it completes.
+      });
+
 //        vertx.executeBlocking(future->
 //                {
 //                    
